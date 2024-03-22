@@ -1,0 +1,14 @@
+name : test
+on : push
+jobs:
+    id: test
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v3
+      - name: Run 
+            run: |
+             python -m pip install –upgrade pip
+             pip3 install -r ${{file1}}
+             python3 ${{file2}} > log.txt 2>&1 &
